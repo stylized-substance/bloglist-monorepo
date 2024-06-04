@@ -1,0 +1,159 @@
+POST http://localhost:3003/api/blogs
+content-Type: application/json
+
+{
+  "title": "Test",
+  "author": "testauthor",
+  "url": "testurl",
+  "likes": "10"
+}
+
+###
+
+POST http://localhost:3003/api/blogs
+content-Type: application/json
+
+{
+  "title": "Test",
+  "author": "testauthor",
+  "url": "testurl",
+  "likes": "10",
+  "userId": "41224d776a326fb40f000001"
+}
+
+###
+POST http://localhost:3003/api/blogs
+content-Type: application/json
+
+{
+  "title": "newBlogLikesMissing"
+}
+
+###
+POST http://localhost:3003/api/blogs
+content-Type: application/json
+
+{
+  "likes": 10
+}
+
+###
+
+POST http://localhost:3003/api/blogs
+content-Type: application/json
+
+{
+  "title": "newBlogTitle",
+  "likes": 44
+}
+
+###
+
+GET http://localhost:3003/api/blogs
+
+###
+
+GET http://localhost:3003/api/blogs/6464ba8f23d53b2f5530bc9f
+
+###
+
+DELETE http://localhost:3003/api/blogs/642d35a99fc0a34826c8eeda
+
+###
+
+PUT http://localhost:3003/api/blogs/6464ba8f23d53b2f5530bc9f
+content-Type: application/json
+
+{
+  "likes": "30"
+}
+
+###
+
+GET http://localhost:3003/api/users
+
+###
+
+POST http://localhost:3003/api/users
+content-Type: application/json
+
+{
+  "username": "root",
+  "name": "superuser",
+  "password": "secretpassword"
+}
+
+###
+
+POST http://localhost:3003/api/users
+content-Type: application/json
+
+{
+  "username": "passwordtooshort",
+  "name": "superuser",
+  "password": "a"
+}
+
+###
+
+POST http://localhost:3003/api/users
+content-Type: application/json
+
+{
+  "username": "a",
+  "name": "superuser",
+  "password": "usernametooshort"
+}
+
+###
+
+POST http://localhost:3003/api/users
+content-Type: application/json
+
+{
+  "username": "neasdfdsfdsaasddgfdlkjfgwussdfdfsser",
+  "name": "newuser",
+  "password": "newuser"
+}
+
+###
+
+POST http://localhost:3003/api/users
+content-Type: application/json
+
+{
+  "password": "usernamemissing"
+}
+
+###
+
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "logintestuser",
+  "password": "testpassword"
+}
+
+###
+
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "root",
+  "password": "superuser"
+}
+
+###
+
+GET http://localhost:3003/api/blogs/657847a69fc97e54585ac1a3/comments
+
+###
+
+POST http://localhost:3003/api/blogs/657847a69fc97e54585ac1a3/comments
+Content-Type: application/json
+
+{
+  "content": "this is a test comment"
+}
