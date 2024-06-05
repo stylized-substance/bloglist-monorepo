@@ -87,6 +87,10 @@ const App = () => {
     }
   }
 
+  const handleLike = () => {
+
+  }
+
   const createBlog = (blogObject) => {
     createFormRef.current.toggleVisibility()
     blogService
