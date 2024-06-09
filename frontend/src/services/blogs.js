@@ -27,8 +27,12 @@ const create = async newObject => {
 }
 
 const update = async (id, newObject) => {
-  const response = await axios.put(`${baseUrl}/${id}`, newObject)
-  return response.data
+  try {
+    const response = await axios.put(`${baseUrl}/${id}`, newObject)
+    return response.data
+  } catch (e) {
+    console.log('error', e)
+  }
 }
 
 const remove = async (id) => {
@@ -39,5 +43,5 @@ const remove = async (id) => {
   const response = await axios.delete(`${baseUrl}/${id}`, config)
   return response.data
 }
-
+// eslint-disable-next-line
 export default { getAll, getOne, create, update, remove, setToken }

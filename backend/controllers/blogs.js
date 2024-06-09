@@ -70,8 +70,12 @@ blogsRouter.delete('/:id', userExtractor, async (request, response) => {
 })
 
 blogsRouter.put('/:id', async (request, response) => {
-  const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, request.body, { returnDocument: 'after' })
-  response.status(200).json(updatedBlog)
+  try {
+    const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, request.body, { returnDocument: 'after' })
+    response.status(200).json(updatedBlog)
+  } catch (error) {
+    console.log('error', error)
+  }
 })
 
 module.exports = blogsRouter;

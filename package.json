@@ -1,6 +1,8 @@
 {
   "scripts": {
     "installDeps": "cd backend && npm install && cd ../frontend && npm install",
-    "startDev": "cd backend && npm run dev && cd ../frontend && npm start"
+    "startDevBackend": "cd backend && npm run dev",
+    "startDevFrontEnd": "cd frontend && npm start",
+    "buildFrontEnd": "cd frontend && npm run build"
   }
 }

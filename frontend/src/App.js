@@ -87,8 +87,13 @@ const App = () => {
     }
   }
 
-  const handleLike = () => {
-
+  const handleLike = (blog) => {
+    const likedBlog = {
+      likes: blog.likes + 1,
+    }
+    blogService
+      .update(blog.id, likedBlog)
+      .then(returnedBlog => setBlogs(blogs.map(blog => blog.id === returnedBlog.id ? returnedBlog : blog)))
   }
 
   const createBlog = (blogObject) => {
