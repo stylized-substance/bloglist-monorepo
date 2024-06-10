@@ -6,6 +6,11 @@ const express = require('express');
 const config = require('./utils/config');
 require('express-async-errors')
 
+
+const blogsRoute = process.env.NODE_ENV === 'production' ? '/blogs' : '/api/blogs'
+const usersRoute = process.env.NODE_ENV === 'production' ? '/users' : '/api/users'
+const loginRoute =  process.env.NODE_ENV === 'production' ? '/login' : '/api/login'
+
 const app = express();
 
 const blogsRouter = require('./controllers/blogs');
@@ -30,9 +35,9 @@ app.use(cors());
 app.use(express.static('build'));
 app.use(express.json());
 app.use(tokenExtractor);
-app.use('/api/blogs', blogsRouter);
-app.use('/api/users', usersRouter)
-app.use('/api/login', loginRouter);
+app.use(blogsRoute, blogsRouter);
+app.use(usersRoute, usersRouter)
+app.use(loginRoute, loginRouter);
 
 if (process.env.NODE_ENV === 'test') {
   const testingRouter = require('./controllers/testing')
