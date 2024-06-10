@@ -8,13 +8,15 @@
     "buildFrontend": "cd frontend && npm run build",
     "e2eTest": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" && cd frontend && npm run cypress:run",
     "testFrontend": "cd frontend && npm run test",
-    "testBackend": "cd backend && npm run test"
+    "testBackend": "cd backend && npm run test",
+    "deploy": "fly deploy --ha=false"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.7",
     "concurrently": "^8.2.2"
   }
 }
