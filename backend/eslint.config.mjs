@@ -7,10 +7,10 @@ export default [
   {languageOptions: { globals: globals.node }},
   pluginJs.configs.recommended,
   {
-    files: ["*helper*"],
+    files: ["tests/*"],
     rules: {
       "no-undef": "off",
       "no-unused-vars": "off"
-    }
+    },
   }
 ];
