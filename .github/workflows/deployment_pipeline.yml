@@ -1,12 +1,12 @@
 name: Deployment pipeline
 
 on:
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
   pull_request:
     branches: [master]
-    types [opened, synchronize]
+    types: [opened, synchronize]
 
 jobs:
   lint-and-test:
