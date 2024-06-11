@@ -27,6 +27,8 @@ jobs:
         run: npm run testFrontend
       - name: Test backend
         run: npm run testBackend
+        env:
+          TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
   deploy:
     if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
     name: Deploy app
