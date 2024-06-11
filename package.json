@@ -3,7 +3,7 @@
     "start": "NODE_ENV=production node index.js",
     "lintFrontend": "cd frontend && npm run eslint",
     "lintBackend": "cd backend && npm run eslint",
-    "installDeps": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "installDeps": "npm install --legacy-peer-deps && cd backend && npm install && cd ../frontend && npm install",
     "startDevBackend": "cd backend && npm run dev",
     "startDevFrontend": "cd frontend && npm start",
     "startTestBackend": "cd backend && npm run start:test",
