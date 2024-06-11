@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production node index.js",
     "dev": "NODE_ENV=development nodemon index.js",
-    "test": "NODE_ENV=test jest --verbose --runInBand",
+    "test": "NODE_ENV=test node index.js & NODE_ENV=test jest --verbose --runInBand && killall node",
     "start:test": "NODE_ENV=test node index.js",
     "eslint": "eslint .",
     "eslint-fix": "eslint './**/*.{js,jsx}' --fix"
