@@ -25,6 +25,8 @@ jobs:
         run: npm run lintBackend
       - name: Test frontend
         run: npm run testFrontend
+      - name: Start test backend
+        run: npm run startTestBackend
       - name: Test backend
         run: npm run testBackend
   deploy:
