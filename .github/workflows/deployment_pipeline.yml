@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '20'
       - name: Install dependencies
-        run: npm installDeps
+        run: npm run installDeps
       - name: Lint frontend
         run: npm run lintFrontend
       - name: Lint backend
