@@ -5,7 +5,7 @@ const userExtractor = async (request, response, next) => {
     return response.status(401).json({ error: 'Authorization header missing' })
   }
 
-  const decodedToken = jwt.verify(request.token, process.env.SECRET)
+  const decodedToken = jwt.verify(request.token, process.env.JWTSECRET)
 
   if (!decodedToken.id) {
     return response.status(401).json({ error: 'token invalid' })
