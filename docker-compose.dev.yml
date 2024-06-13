@@ -9,6 +9,7 @@ services:
     container_name: bloglist-monorepo-backend-dev
     environment:
       - NODE_ENV=development
+      - JWTSECRET=jwtsecret
   frontend:
     image: bloglist-monorepo-frontend-dev
     build:
